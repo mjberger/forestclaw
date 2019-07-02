@@ -43,6 +43,7 @@ typedef struct fclaw2d_physical_time_info
 {
     double level_time;
     int time_interp;
+    double dt_step;
 } fclaw2d_physical_time_info_t;
 
 

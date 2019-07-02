@@ -51,7 +51,7 @@ include applications/clawpack/advection/2d/swirl_cons/Makefile.am
 
 ## Acoustics (on flat domains)
 include applications/clawpack/acoustics/2d/radial/Makefile.am
-include applications/clawpack/acoustics/2d/interface/Makefile.am
+include applications/clawpack/acoustics/2d/airburst/Makefile.am
 
 ## Burgers
 include applications/clawpack/burgers/2d/pwconst/Makefile.am

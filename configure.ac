@@ -33,6 +33,9 @@ FCLAW_ARG_ENABLE([ash3d], [enable ash3d library and applications],
 FCLAW_ARG_ENABLE([clawpack], [enable clawpack libraries 4.6 and 5.0 and applications],
                  [CLAWPACK])
 
+FCLAW_ARG_ENABLE([airburst], [enable Marsha's Airburst application],
+                 [AIRBURST])
+
 FCLAW_ARG_ENABLE([development], [enable applications under development],
                  [DEVELOPMENT])
 

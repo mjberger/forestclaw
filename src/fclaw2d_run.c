@@ -195,7 +195,8 @@ void outstyle_1(fclaw2d_global_t *glob)
             double maxcfl_step = fclaw2d_advance_all_levels(glob, t_curr,dt_step);
 
             fclaw2d_timer_start (&glob->timers[FCLAW2D_TIMER_CFL_COMM]);
-            maxcfl_step = fclaw2d_domain_global_maximum (*domain, maxcfl_step);
+            if (!fclaw_opt->use_fixed_dt) // mjb change
+               maxcfl_step = fclaw2d_domain_global_maximum (*domain, maxcfl_step);
             fclaw2d_timer_stop (&glob->timers[FCLAW2D_TIMER_CFL_COMM]);
 
 

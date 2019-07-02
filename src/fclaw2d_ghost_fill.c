@@ -297,6 +297,8 @@ void setphysical(fclaw2d_global_t *glob,
     parallel_mode.ghost_mode = ghost_mode;
     parallel_mode.user = (void*) &t_info;
 
+    t_info.dt_step = glob->dt;
+    
     parallel_mode.cb_fill = cb_fclaw2d_physical_set_bc;
     fclaw2d_global_iterate_level(glob, level, cb_parallel_wrap,
                                  (void *) &parallel_mode);

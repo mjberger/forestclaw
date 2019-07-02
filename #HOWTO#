@@ -1,0 +1,6 @@
+go to github.com/forestClaw/forestclaw
+click on clone or download (button to right) copy past after typing  git clone in window
+cd forestclaw
+git submodule init
+git submodule update
+

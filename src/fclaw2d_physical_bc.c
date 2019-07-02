@@ -63,7 +63,8 @@ void cb_fclaw2d_physical_set_bc(fclaw2d_domain_t *domain,
                               this_patch,
                               this_block_idx,
                               this_patch_idx,
-                              t_info->level_time,dt,
+                              t_info->level_time,
+                              t_info->dt_step,
                               intersects_bc,
                               t_info->time_interp);
 }

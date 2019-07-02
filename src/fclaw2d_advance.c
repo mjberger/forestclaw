@@ -282,6 +282,7 @@ double fclaw2d_advance_all_levels(fclaw2d_global_t *glob,
                    and ghost cell exchange for next update. */
                 int time_interp_level = timeinterp_level(ts_counter,maxlevel);
                 int time_interp = 1;
+                glob->dt = ts_counter[maxlevel].dt_step;
                 fclaw2d_ghost_update(glob,
                                      time_interp_level+1,
                                      maxlevel,
@@ -292,6 +293,7 @@ double fclaw2d_advance_all_levels(fclaw2d_global_t *glob,
             else
             {
                 int time_interp = 0;
+                glob->dt = ts_counter[maxlevel].dt_step;
                 fclaw2d_ghost_update(glob,
                                      minlevel,
                                      maxlevel,
@@ -312,6 +314,7 @@ double fclaw2d_advance_all_levels(fclaw2d_global_t *glob,
 
     double sync_time =  ts_counter[maxlevel].current_time;
     int time_interp = 0;
+    glob->dt = ts_counter[maxlevel].dt_step;
     fclaw2d_ghost_update(glob,minlevel,maxlevel,sync_time,
                          time_interp,FCLAW2D_TIMER_ADVANCE);
 

@@ -44,6 +44,13 @@ src_solvers_fc2d_clawpack4.6_libclawpack4.6_la_CPPFLAGS = \
 ## Add headers from this library to general header pool, to be used by other apps
 AM_CPPFLAGS  += $(FCLAW_CLAWPACK46_CPPFLAGS)
 
-LDADD        += $(FCLAW_CLAWPACK46_LDADD)
+# LDADD        += $(FCLAW_CLAWPACK46_LDADD)
+
+LDADD        += $(FCLAW_CLAWPACK46_LDADD) \
+						    $(FCLAW_CLAWPACK46_LDADD) \
+                $(FCLAW_CLAWPATCH_LDADD) \
+                @top_builddir@/src/libforestclaw.la \
+                @FCLAW_P4EST_LDADD@ \
+								@FCLAW_SC_LDADD@
 
 include_HEADERS += $(libclawpack4_6_installed_headers)

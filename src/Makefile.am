@@ -118,13 +118,18 @@ FCLAW_FFLAGS = $(FCLAW_CPPFLAGS)   # (orignally used for metric.i;  not needed n
 lib_LTLIBRARIES += src/libforestclaw.la
 src_libforestclaw_la_SOURCES = \
 	$(libforestclaw_internal_headers) \
- 	$(libforestclaw_compiled_sources)
+	$(libforestclaw_compiled_sources)
 
 src_libforestclaw_la_CPPFLAGS = $(AM_CPPFLAGS) $(FCLAW_CPPFLAGS)
 
-LDADD += @top_builddir@/src/libforestclaw.la \
+FCLAW_LDADD = @top_builddir@/src/libforestclaw.la \
 	     @FCLAW_P4EST_LDADD@ \
 	     @FCLAW_SC_LDADD@
+
+LDADD += $(FCLAW_LDADD) \
+	     @FCLAW_P4EST_LDADD@ \
+	     @FCLAW_SC_LDADD@
+
 
 EXTRA_src_libforestclaw_la_DEPENDENCIES = @FCLAW_P4EST_LDADD@ @FCLAW_SC_LDADD@
 
